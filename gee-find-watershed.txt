@@ -1,0 +1,133 @@
+
+
+
+var stateName = 'any state name';
+var dataset = ee.FeatureCollection('TIGER/2018/States');
+var stateFeature = dataset.filter(ee.Filter.eq('NAME', stateName));
+
+var visParams = {
+  palette: ['purple', 'blue', 'green', 'yellow', 'orange', 'red'],
+  min: 500000000.0,
+  max: 5e+11,
+  opacity: 0.8,
+};
+
+var image = ee.Image().float().paint(stateFeature, 'ALAND');
+var usgs = ee.FeatureCollection('projects/ee-ishret-1/assets/usa_usgs_stations');
+var usgs_state = usgs.filter(ee.Filter.bounds(stateFeature));
+
+// print('First feature properties:', usgs_state.first().toDictionary());
+// print('First 5 features:', usgs_state.limit(5));
+
+
+var cdl = ee.ImageCollection('USDA/NASS/CDL')
+  .filter(ee.Filter.date('2022-01-01', '2023-01-01'))
+  .first();
+
+var stateCDL = cdl.clip(stateFeature);
+
+var cdlParams = {
+  bands: ['cropland'],
+  min: 0,
+  max: 255,
+  palette: [
+    '000000', //black----------------noodata
+    '1CE607', //Bright Green---------Corn
+    'FEFF08', //Neon Yellow------------Soybeans
+    'FF2A0B', //Bright Red-----------Alfalfa or Other Hay/Grass
+    '1500FF', //Vivid Blue-----------Water Bodies
+    '970CA8',//Purple-------------Sugarbeets
+    'FF8B17', //Orange-Red---------Sunflower
+    'FEFF05', //Bright Yellow------------Double Cropped Soybeans/Wheat
+    '1CE606', //Bright Green (same as 1CE607)-Corn (duplicate entry)
+    '148C0E', //Dark Green------------------	Forest
+    'B90000', //Deep Red----------Fallow/Idle Cropland
+    'A67B5B',//Brown-------------Other Grains (like Barley, Oats, or Rye)
+    'A67B5B', //Brown (duplicate)--Other Grains (like Barley, Oats, or Rye)
+    'FFD084', //	Light Orange/Gold--Canola
+    'F00083', //Hot Pink--------Peanuts
+    'FFA600', //Bright Orange-----Cotton
+    '9F8346', //	Tan/Brown---Sorghum
+    'FF9800',//	Deep Orange--Citrus (Oranges, etc.)
+    '86A91C', //	Olive Green---Pasture/Grassland
+    '985EB1', //	Medium Purple---Dry Beans or Other Legumes
+    '069FEB', //	Sky Blue---Wetlands or Open Water
+    '63E3FF', //Light Cyan---	Aquaculture or Cranberries
+    '09CFBD', //	Teal----	Other Row Crops
+    '9F8347'//Warm Brown---Mixed Grains
+  ]
+};
+
+
+var nlcd = ee.ImageCollection("USGS/NLCD_RELEASES/2019_REL/NLCD")
+  .filter(ee.Filter.eq('system:index', '2019'))
+  .first()
+  .select('landcover');
+
+var stateNLCD = nlcd.clip(stateFeature);
+
+var nlcdVis = {
+  bands: ['landcover'],
+  min: 0,
+  max: 95,
+  palette: [
+    '000000', // 0 -Black- No Data
+    '476BA0', // 11 -Steel Blue- Open Water
+    'D1DDF9', // 12 -Light sky blue- Perennial Ice/Snow
+    'DDC9C9', // 21 -Pale Taupe / Light Grayish Pink- Developed, Open Space
+    'D89382', // 22 -Light Salmon Pink- Developed, Low Intensity
+    'ED0000', // 23 -Vivid Red- Developed, Medium Intensity
+    'AA0000', // 24 -	Deep Red- Developed, High Intensity
+    'B2ADA3', // 31 -Warm Gray- Barren Land (Rock/Sand/Clay)
+    '68AA63', // 41 -Moss Green- Deciduous Forest
+    '1C6330', // 42 -	Forest Green- Evergreen Forest
+    '68AA63', // 43 -Moss Green (duplicate)- Mixed Forest
+    'A58C30', // 52 -	Dark Khaki / Golden Brown- Shrub/Scrub
+    'CCBA7C', // 71 -	Tan / Sand---- Grassland/Herbaceous
+    'E2E2C1', // 81 -	Pale Beige----- Pasture/Hay
+    'FFD966', // 82 -Golden Yellow---- Cultivated Crops
+    'C9C977', // 90 -Olive Green--- Woody Wetlands
+    '7AA57A'  // 95 -	Sage Green---- Emergent Herbaceous Wetlands
+  ]
+};
+
+Map.centerObject(stateFeature, 5);
+Map.addLayer(stateNLCD, nlcdVis, stateName + ' Land Cover (NLCD)', true);
+Map.addLayer(stateCDL, cdlParams, stateName + ' Cropland Data Layer', true);
+Map.addLayer(image, {
+  palette: ['purple', 'blue', 'green', 'yellow', 'orange', 'red'],
+  min: 500000000.0,
+  max: 5e+11,
+  opacity: 0.3
+}, stateName + ' State');
+Map.addLayer(usgs_state, {color: 'blue', pointSize: 5}, 'USGS Gages in ' + stateName);
+Map.addLayer(stateFeature, null, 'for Inspector', false);
+
+
+
+/// first run the upper code, select the site_no that you want to investigate then comment in this part///
+function createStationUrls(siteNo) {
+  return {
+    monitoringUrl: 'https://waterdata.usgs.gov/monitoring-location/' + siteNo + 
+                  '/#dataTypeId=continuous-00065-0&period=P7D&showMedian=false',
+    metadataUrl: 'https://waterdata.usgs.gov/nwis/inventory/?site_no=' + siteNo
+  };
+}
+
+
+var siteNumbers = ['07249985']; 
+
+var siteLat = 35.5172214736102;  // latitude for site 07197000
+var siteLon = -94.46416515840428; // longitude for site 07197000
+
+// Center map on these coordinates with zoom level 12
+Map.setCenter(siteLon, siteLat, 15);
+
+print('USGS Station URLs:');
+for (var i = 0; i < siteNumbers.length; i++) {
+  var siteNo = siteNumbers[i];
+  var urls = createStationUrls(siteNo);
+  print('Site ' + siteNo + ':');
+  print('  - Monitoring data: ' + urls.monitoringUrl);
+  print('  - Location metadata: ' + urls.metadataUrl);
+}
