@@ -1,0 +1,5 @@
+Compared_Variable,R_squared,NNSE,NSE
+thuc_test_goodwin_nhdplus_Total Streamflow [Mg],0.5571589272845463,9.215750917777817e-05,-10848.987715726249
+thuc_test_goodwin_nhdplus__Sediment: All: Total [Mg],0.6299402781647075,0.5002150412860035,0.0008597953610134379
+thuc_test_goodwin_topagnps_Direct Runoff [Mg],0.7960969047070273,7.745305379218855e-05,-12909.046770125595
+thuc_test_goodwin_topagnps_Sediment: All: Total [Mg],0.8203170403973933,0.5554772576171378,0.19974627892101926

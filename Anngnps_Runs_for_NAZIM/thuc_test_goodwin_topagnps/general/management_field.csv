@@ -1,0 +1,6 @@
+Field_ID,Landuse_Type_ID,Mgmt_Schd_ID,Greg_Yr_for_1st_Yr_of_Rotation,Percent_Rock_Cover,Interrill_Erosion_Code,Random_Roughness,Terrace_Horizontal_Distance,Terrace_Grade,Tile_Drain_ID,Input_Units_Code,CDL_Category,CDL_Value,Modified_CDL_Category
+Corn,CROPLAND,Corn,,,,,,,,1,Corn,1,Corn
+Developed_Open_Space,URBAN,Developed_Open_Space,,,,,,,,1,Developed/Open Space,121,Developed_Open_Space
+Grassland_Pasture,CROPLAND,Grassland_Pasture,,,,,,,,1,Grassland/Pasture,176,Grassland_Pasture
+Mixed_Forest,FOREST,Mixed_Forest,,,,,,,,1,Mixed Forest,143,Mixed_Forest
+Soybeans,CROPLAND,Soybeans,,,,,,,,1,Soybeans,5,Soybeans
