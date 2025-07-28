@@ -1,0 +1,13 @@
+Mgmt_Operation_ID,Effect_Code_01,Effect_Code_02,Effect_Code_03,Effect_Code_04,Effect_Code_05,Residue_Cover_Remaining,Residue_Weight_Remaining,Area_Disturbed,Initial_Random_Roughness,Final_Random_Roughness,Operation_Tillage_Depth,Added_Surface_Residue,Surface_Decomp,Subsurface_Decomp,Surface_Residue_30%,Surface_Residue_60%,Surface_Residue_90%,Input_Units_Code
+chisel;_st._pt.,8,1,2,,,0.75,,100.0,1.5,0.24,7.0,,,,,,,0
+cultivator;_field_62,8,1,2,,,0.4,,100.0,0.6,0.24,4.0,,,,,,,0
+disk;_tandem_light_f,8,1,2,,,0.65,,100.0,0.6,0.24,3.0,,,,,,,0
+drill_or_airseeder;2,1,2,7,,,0.4,,65.0,0.3,0.24,1.5,,,,,,,0
+fert_applic._surface,1,,,,,,,,,,,,,,,,,0
+graze;_continuous,6,5,2,7,,1.0,,100.0,0.6,0.6,2.0,,,,,,,0
+harvest;_killing_cr5,8,1,,,,,,,,,,,,,,,,0
+planter;_double_di5,1,2,7,,,0.4,,15.0,0.4,0.24,2.5,,,,,,,0
+regrow,7,,,,,,,,,,,,,,,,,0
+sprayer;_fungicide,1,,,,,,,,,,,,,,,,,0
+sprayer;_post_emerg1,4,,,,,,,,,,,100.0,,,,,,0
+sprayer;_pre-emergen,1,,,,,,,,,,,,,,,,,0

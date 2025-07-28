@@ -1,0 +1,19 @@
+Soil_ID,Hydrologic_Soil_Group,K_Factor,Albedo,Time_to_Consolidation,Impervious_Depth,Specific_Gravity,Initial_Soil_Conditions_ID,Soil_Name,Soil_Texture,Number_of_Soil_Layers,Input_Units_Code
+568308,C,0.0566,0.3,,540.0,,,Calloway,Silt loam,3,1
+568309,B,0.0645,0.3,,,,,Collins,Silt loam,2,1
+568310,B,0.0645,0.3,,,,,Collins,Silt loam,2,1
+568313,B,0.0566,0.3,,,,,Falaya,Silt loam,2,1
+568314,B,0.0566,0.3,,,,,Falaya,Silt loam,2,1
+568319,C,0.0645,0.3,,610.0,,,Grenada,Silt loam,5,1
+568322,D,0.0645,0.3,,690.0,,,Grenada,Silt loam,5,1
+568325,D,0.0421,0.3,,,,,Gullied land,Fine sandy loam,3,1
+568326,D,0.0724,0.3,,,,,Gullied land,Silt loam,3,1
+568328,C,0.0566,0.29,,690.0,,,Loring,Silt loam,4,1
+568329,C,0.0645,0.29,,610.0,,,Loring,Silt loam,4,1
+568331,C,0.0566,0.29,,610.0,,,Loring,Silt loam,4,1
+568332,C,0.0645,0.29,,610.0,,,Loring,Silt loam,4,1
+568334,D,0.0645,0.23,,580.0,,,Loring,Silt loam,4,1
+568335,D,0.0645,0.23,,580.0,,,Loring,Silt loam,4,1
+568336,D,0.0645,0.3,,630.0,,,Loring,Silt loam,4,1
+568337,D,0.0724,0.3,,630.0,,,Loring,Silt loam,4,1
+568343,B,0.0566,0.3,,,,,Memphis,Silt loam,3,1

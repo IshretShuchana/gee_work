@@ -1,0 +1,19 @@
+LOG,Execution Date:  7/11/2025                    Execution Start Time: 12:51:21
+LOG,*** BEGIN EXECUTION: AnnAGNPS v6.00.a.024_2024.05.23; 64-bit ***
+WARNING,Section = "CELL DATA",ID = "",Parameter column = " 35",Unrecognized column header "cdl_value_2022". This column will be ignored.
+WARNING,Section = "CELL DATA:",ID = "956313",Parameter = "Concentrated Flow Slope",Record # = "17",The value (0.00001) is outside the usual range of 0.0001 - 1.0.
+WARNING,Section = "CELL DATA:",ID = "956403",Parameter = "Concentrated Flow Slope",Record # = "37",The value (0.00001) is outside the usual range of 0.0001 - 1.0.
+WARNING,Section = "CELL DATA:",ID = "956412",Parameter = "Concentrated Flow Slope",Record # = "38",The value (0.00001) is outside the usual range of 0.0001 - 1.0.
+WARNING,Section = "CELL DATA:",ID = "956473",Parameter = "Concentrated Flow Slope",Record # = "52",The value (0.00001) is outside the usual range of 0.0001 - 1.0.
+WARNING,Section = "CELL DATA:",ID = "956812",Parameter = "Concentrated Flow Slope",Record # = "135",The value (0.00001) is outside the usual range of 0.0001 - 1.0.
+WARNING,Section = "CROP DATA",ID = "",Parameter column = "  6",Unrecognized column header "'USLE_C_Fctr". This column will be ignored.
+WARNING,Section = "MANAGEMENT FIELD DATA",ID = "",Parameter column = " 12",Unrecognized column header "CDL_Category". This column will be ignored.
+WARNING,Section = "MANAGEMENT FIELD DATA",ID = "",Parameter column = " 13",Unrecognized column header "CDL_Value". This column will be ignored.
+WARNING,Section = "MANAGEMENT FIELD DATA",ID = "",Parameter column = " 14",Unrecognized column header "Modified_CDL_Category". This column will be ignored.
+WARNING,Section = "MANAGEMENT OPERATION DATA:",ID = "sprayer;_post_emerg1",Parameter = "Surface Decomposition",Record # = "12",A blank field or a value of 0.0 was encountered for the Surface Decomposition used with effect code 4. This value must be greater than 0.0. The default value of 0.016 will be applied.
+WARNING,Section = "MANAGEMENT OPERATION DATA:",ID = "sprayer;_post_emerg1",Parameter = "Sub-Surface Decomposition",Record # = "12",A blank field or a value of 0.0 was encountered for the Sub-Surface Decomposition used with effect code 4. This value must be greater than 0.0. The default value of 0.016 will be applied.
+WARNING,Section = "MANAGEMENT OPERATION DATA:",ID = "sprayer;_post_emerg1",Parameter = "Surface Residue",Record # = "12",All residue fields are blank or 0.0. At least one surface residue field must be greater than 0.0. The default value of 0.01 will be applied to the surface residue at 30% field.
+WARNING,Section = "MANAGEMENT SCHEDULE DATA:",ID = "Corn",Parameter = "Curve Number ID",Record # = "4",A blank was encountered on the first event of a new management schedule with an operation date of "11/01/0001". The internally defined global default crop RCN ID of "Default Crop CN" will be used.
+WARNING,Section = "MANAGEMENT SCHEDULE DATA:",ID = "Soybeans",Parameter = "Curve Number ID",Record # = "18",A blank was encountered on the first event of a new management schedule with an operation date of "11/01/0001". The internally defined global default crop RCN ID of "Default Crop CN" will be used.
+WARNING,Section = "REACH DATA:",ID = "95640",Parameter = "Reach Slope",Record # = "18",The value (0.00001) is outside the usual range of 0.0001 - 1.0.
+WARNING,Climate file has less than ten years of data.
